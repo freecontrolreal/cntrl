@@ -1,23 +1,15 @@
 for _, plr in pairs(workspace.Players:GetChildren()) do
-    print("Reading...")
-    if game:service"Players"[plr.Name].UserId == game:service"Players".LocalPlayer.UserId then return end
-    if game:service"Players"[plr.Name].UserId == Settings['host'] then return end
-    if not table.find(Alts,plr.UserId) then return end
-    print("W?")
-    repeat wait() until plr.Parent ~= nil and plr.Character:FindFirstChild("HumanoidRootPart")
-    print("Big W")
-    plr:Destroy()
+    print('reading')
+    if game:service"Players"[plr.Name].UserId ~= game:service"Players".LocalPlayer.UserId and game:service"Players"[plr.Name].UserId ~= Settings['host'] and table.find(Alts,plr.UserId) then
+        plr:Destroy()
+    end
 end
 
 game:service"Workspace".Players.ChildAdded:Connect(function(plr)
-    print("Reading...")
-    if game:service"Players"[plr.Name].UserId == game:service"Players".LocalPlayer.UserId then return end
-    if game:service"Players"[plr.Name].UserId == Settings['host'] then return end
-    if not table.find(Alts,plr.UserId) then return end
-    print("W?")
-    repeat wait() until plr.Parent ~= nil and plr.Character:FindFirstChild("HumanoidRootPart")
-    print("Big W")
-    plr:Destroy()
+    print('reading')
+    if game:service"Players"[plr.Name].UserId ~= game:service"Players".LocalPlayer.UserId and game:service"Players"[plr.Name].UserId ~= Settings['host'] and table.find(Alts,plr.UserId) then
+        plr:Destroy()
+    end
 end)
 
 game:service"Players".LocalPlayer.Idled:Connect(function()
