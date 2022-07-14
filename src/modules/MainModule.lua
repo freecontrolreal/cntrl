@@ -5,3 +5,7 @@ function RandomLetterGen(length)
     end
     return data
 end
+
+function FormatNumToStyle(arg)
+    return tostring(arg):reverse():gsub("%d%d%d", "%1,"):reverse():gsub("^,", "")
+end
