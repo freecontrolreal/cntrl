@@ -19,11 +19,11 @@ function HeadLockDisattachment()
     end
 end
 
-function HeadLockAttachment()
+function HeadLockAttachment(x,y,z)
     HeadLockDisattachment()
     local Part = Instance.new("Part",workspace)
     local Weld = Instance.new("Weld",workspace)
-    Part.Position = game.Players.LocalPlayer.Character.Head.Position
+    Part.Position = CFrame.new(x,y,z)
     Part.Transparency = 1
     Part.Massless = false
     Part.CanCollide = false
