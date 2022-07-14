@@ -1,14 +1,18 @@
 for _, plr in pairs(workspace.Players:GetChildren()) do
     print('reading')
     if game:service"Players"[plr.Name].UserId ~= game:service"Players".LocalPlayer.UserId and game:service"Players"[plr.Name].UserId ~= Settings['host'] and table.find(Alts,plr.UserId) then
-        plr:Destroy()
+        for i,v in pairs(plr:GetChildren()) do
+            v:Destroy()
+        end
     end
 end
 
 game:service"Workspace".Players.ChildAdded:Connect(function(plr)
     print('reading')
     if game:service"Players"[plr.Name].UserId ~= game:service"Players".LocalPlayer.UserId and game:service"Players"[plr.Name].UserId ~= Settings['host'] and table.find(Alts,plr.UserId) then
-        plr:Destroy()
+        for i,v in pairs(plr:GetChildren()) do
+            v:Destroy()
+        end
     end
 end)
 
