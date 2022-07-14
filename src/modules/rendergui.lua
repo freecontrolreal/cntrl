@@ -1,5 +1,3 @@
-loadstring(game:HttpGet('https://raw.githubusercontent.com/freecontrolreal/cntrl/main/src/modules/MainModule.lua'))()
-
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local NameOut = Instance.new("TextLabel")
