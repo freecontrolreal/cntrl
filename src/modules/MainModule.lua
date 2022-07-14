@@ -64,3 +64,24 @@ function FormLine(anchor,listofcords)
         end
     end
 end
+
+function ResetAlt()
+    local oldpos = game:service"Players".LocalPlayer.Character.HumanoidRootPart.CFrame
+    for i,v in pairs(game:service"Players".LocalPlayer.Character:GetChildren()) do
+        if v:IsA("MeshPart") then
+            v:Destroy()
+        end
+    end
+    game:service"Players".LocalPlayer.CharacterAdded:Wait()
+    game:service"Players".LocalPlayer.Character.HumanoidRootPart.CFrame = oldpos
+end
+
+function Setup(listofcords)
+    local new = ReformAltList()
+    for i,v in pairs(new) do
+        if v == game:service"Players".LocalPlayer.UserId then
+            local x,y,z = v:split(listofcords[i],",")[1],v:split(listofcords[i],",")[2],v:split(listofcords[i],",")[3]
+            game:service"Players".LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(x,y,z)
+        end
+    end
+end
