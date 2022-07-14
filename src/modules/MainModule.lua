@@ -22,12 +22,14 @@ end
 function HeadLockAttachment(x,y,z)
     HeadLockDisattachment()
     local Part = Instance.new("Part",workspace)
+    Part.Name = 'HeadLockPiece'
     local Weld = Instance.new("Weld",workspace)
-    Part.Position = CFrame.new(x,y,z)
+    Weld.Name = 'HeadLockWelder'
+    Part.CFrame = CFrame.new(x,y,z)
     Part.Transparency = 1
     Part.Massless = false
     Part.CanCollide = false
-    Weld.Part0 = game.Players.LocalPlayer.Character.Head
+    Weld.Part0 = game:service"Players".LocalPlayer.Character.Head
     Weld.Part1 = Part
     Part.Anchored = true
 end
